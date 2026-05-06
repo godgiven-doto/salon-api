@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перенаправлення на оплату...</title>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 50px; font-family: sans-serif;">
+        <h2>Зачекайте, ми перенаправляємо вас на сторінку оплати...</h2>
+        <form method="POST" action="https://www.liqpay.ua/api/3/checkout" accept-charset="utf-8">
+            <input type="hidden" name="data" value="{{data}}" />
+            <input type="hidden" name="signature" value="{{signature}}" />
+            <button type="submit" style="padding: 10px 20px; cursor: pointer;">Натисніть сюди, якщо перенаправлення не відбулося</button>
+        </form>
+    </div>
+
+    <script>
+        // Автоматичне натискання кнопки при завантаженні
+        document.forms[0].submit();
+    </script>
+</body>
+</html>
